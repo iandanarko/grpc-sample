@@ -1,0 +1,22 @@
+// Protocol buffer version
+syntax = "proto3";
+
+// pacakage names
+package proto;
+
+// Interface of a gRPC service
+service ProductInfo {
+  rpc addProduct(Product) returns (ProductID);
+  rpc getProduct(ProductID) returns (Product);
+}
+
+//Definition of the Product Message
+message Product {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message ProductID {
+  string value = 1;
+}
